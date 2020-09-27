@@ -1,0 +1,52 @@
+.Wrapper
+  .Header
+    .Header__Bar
+      %h1.Header__BarTitle
+        With Work
+      %p.Header__BarUser
+        name
+
+  .Main
+    .List
+      .List__Date
+        日付
+      .List__StartTime
+        開始時間
+      .List__EndTime
+        終了時間
+      .List__ElapsedTime
+        経過時間
+      .List__MajorClass
+        会社名
+      .List__MiddleClass
+        分類
+      .List__SmallClass
+        詳細
+
+    .Item
+      .Item__Date
+        1/1
+      .Item__StartTime
+        12:00
+      .Item__EndTime
+        13:00
+      .Item__ElapsedTime
+        1:00
+      .Item__MajorClass
+        NGS
+      .Item__MiddleClass
+        支払業務
+      .Item__SmallClass
+        月末支払
+
+  
+    = form_with model:@record, html: {class:"Form"}, local: true do |f|
+      .Form__Item
+        = f.date_field :date, class: "Form__Date"
+        = f.time_field :start_time, class: "Form__StartTime"
+        = "〜"
+        = f.time_field :end_time, class: "Form__EndTime"
+        = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
+        = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
+        = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
+      = f.submit 'SEND', class: "Form__Submit"

@@ -1,0 +1,44 @@
+.Wrapper{
+  height: 100vh;
+  background-image: url("#{asset_path('background.jpeg')}");
+  background-size: cover;
+  // display: flex;
+
+}
+.Header{
+  height: 5vh;
+  background-color: rgb(54, 122, 94);
+  &__Bar{
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+  &__BarTitle{
+    font-size: 10px;
+  }
+  }
+}
+.Main {
+  height: 95vh;
+  color: black;
+}
+
+.List{
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  opacity: 0.45;
+  color: black;
+}
+
+.Item{
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Form{
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+}
