@@ -6,14 +6,12 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @record = Record.new(record_params)
-    @record.save
+    Record.create(record_params)
   end
 
   private
 
   def record_params
-    params[:record]
     params.require(:record).permit(:date, :start_time, :end_time, :class1, :class2, :class3)
   end
 end

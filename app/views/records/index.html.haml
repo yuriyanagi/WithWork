@@ -24,20 +24,22 @@
         詳細
 
     .Item
-      .Item__Date
-        1/1
-      .Item__StartTime
-        12:00
-      .Item__EndTime
-        13:00
-      .Item__ElapsedTime
-        1:00
-      .Item__MajorClass
-        NGS
-      .Item__MiddleClass
-        支払業務
-      .Item__SmallClass
-        月末支払
+      - @records.each do |record|
+        .Item__Box
+          .Item__Date
+            = record.date.strftime("%Y/%m/%d")
+          .Item__StartTime
+            = record.start_time.strftime("%H:%M")
+          .Item__EndTime
+            = record.end_time.strftime("%H:%M")
+          .Item__ElapsedTime
+            1:00
+          .Item__MajorClass
+            = record.class1
+          .Item__MiddleClass
+            = record.class2
+          .Item__SmallClass
+            = record.class3
 
   
     = form_with model:@record, html: {class:"Form"}, local: true do |f|
