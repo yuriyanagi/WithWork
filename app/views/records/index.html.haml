@@ -40,6 +40,8 @@
             = record.class2
           .Item__SmallClass
             = record.class3
+          .Item__edit
+            = link_to '編集',edit_record_path(record.id), method: :get
 
   
     = form_with model:@record, html: {class:"Form"}, local: true do |f|

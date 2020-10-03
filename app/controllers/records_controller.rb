@@ -9,6 +9,10 @@ class RecordsController < ApplicationController
     Record.create(record_params)
   end
 
+  def edit
+    @record = Record.find(params[:id])
+  end
+
   private
 
   def record_params
