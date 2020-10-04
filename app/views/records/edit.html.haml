@@ -1,0 +1,10 @@
+= form_with model:@record, html: {class:"Edit__Form"}, local: true do |f|
+  .Form__Item
+    = f.date_field :date, class: "Form__Date"
+    = f.time_field :start_time, class: "Form__StartTime"
+    = "〜"
+    = f.time_field :end_time, class: "Form__EndTime"
+    = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
+    = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
+    = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
+  = f.submit 'SEND', class: "Form__Submit"
