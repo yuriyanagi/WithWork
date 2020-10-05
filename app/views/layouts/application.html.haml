@@ -15,10 +15,6 @@
             With Work
           -if user_signed_in?
             %p.Header__BarUser
-              name
-          -else
-    -if user_signed_in?
-      = yield
-    -else
-      = link_to "ログイン",new_user_session_path ,class:"post"
-      = link_to "新規登録",new_user_registration_path ,class:"post"
+              name    
+    = yield
+
