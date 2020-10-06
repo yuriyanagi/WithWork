@@ -27,7 +27,8 @@
             .Item__EndTime
               = record.end_time.strftime("%H:%M")
             .Item__ElapsedTime
-              1:00
+              - elapsed_seconds = (record.end_time - record.start_time)
+              = (Time.parse("1/1") + elapsed_seconds - (elapsed_seconds.to_i / 86400) * 86400).strftime("%H:%M")
             .Item__MajorClass
               = record.class1
             .Item__MiddleClass
