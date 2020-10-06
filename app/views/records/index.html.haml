@@ -40,10 +40,10 @@
     
       = form_with model:@record, html: {class:"Form"}, local: true do |f|
         .Form__Item
-          = f.date_field :date, class: "Form__Date"
-          = f.time_field :start_time, class: "Form__StartTime"
+          = f.date_select :date, class: "Form__Date", date_separator:'/', use_month_numbers:true
+          = f.time_select :start_time, class: "Form__StartTime", default: @previous_end_time
           = "〜"
-          = f.time_field :end_time, class: "Form__EndTime"
+          = f.time_select :end_time, class: "Form__EndTime"
           = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
           = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
           = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
