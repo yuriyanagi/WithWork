@@ -1,52 +1,54 @@
 .Wrapper
-  .Header
-    .Header__Bar
-      %h1.Header__BarTitle
-        With Work
-      %p.Header__BarUser
-        name
+  -if user_signed_in?
+    .Main
+      .List
+        .List__Date
+          日付
+        .List__StartTime
+          開始時間
+        .List__EndTime
+          終了時間
+        .List__ElapsedTime
+          経過時間
+        .List__MajorClass
+          会社名
+        .List__MiddleClass
+          分類
+        .List__SmallClass
+          詳細
 
-  .Main
-    .List
-      .List__Date
-        日付
-      .List__StartTime
-        開始時間
-      .List__EndTime
-        終了時間
-      .List__ElapsedTime
-        経過時間
-      .List__MajorClass
-        会社名
-      .List__MiddleClass
-        分類
-      .List__SmallClass
-        詳細
+      .Item
+        - @records.each do |record|
+          .Item__Box
+            .Item__Date
+              = record.date.strftime("%Y/%m/%d")
+            .Item__StartTime
+              = record.start_time.strftime("%H:%M")
+            .Item__EndTime
+              = record.end_time.strftime("%H:%M")
+            .Item__ElapsedTime
+              - elapsed_seconds = (record.end_time - record.start_time)
+              = (Time.parse("1/1") + elapsed_seconds - (elapsed_seconds.to_i / 86400) * 86400).strftime("%H:%M")
+            .Item__MajorClass
+              = record.class1
+            .Item__MiddleClass
+              = record.class2
+            .Item__SmallClass
+              = record.class3
+            .Item__edit
+              = link_to '編集',edit_record_path(record.id), method: :get
 
-    .Item
-      .Item__Date
-        1/1
-      .Item__StartTime
-        12:00
-      .Item__EndTime
-        13:00
-      .Item__ElapsedTime
-        1:00
-      .Item__MajorClass
-        NGS
-      .Item__MiddleClass
-        支払業務
-      .Item__SmallClass
-        月末支払
-
-  
-    = form_with model:@record, html: {class:"Form"}, local: true do |f|
-      .Form__Item
-        = f.date_field :date, class: "Form__Date"
-        = f.time_field :start_time, class: "Form__StartTime"
-        = "〜"
-        = f.time_field :end_time, class: "Form__EndTime"
-        = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
-        = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
-        = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
-      = f.submit 'SEND', class: "Form__Submit"
+    
+      = form_with model:@record, html: {class:"Form"}, local: true do |f|
+        .Form__Item
+          = f.date_select :date, class: "Form__Date", date_separator:'/', use_month_numbers:true
+          = f.time_select :start_time, class: "Form__StartTime", default: @previous_end_time
+          = "〜"
+          = f.time_select :end_time, class: "Form__EndTime"
+          = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
+          = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
+          = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
+        = f.submit 'SEND', class: "Form__Submit"
+  - else
+    = link_to "ログイン",new_user_session_path ,class:"post"
+    = link_to "新規登録",new_user_registration_path ,class:"post"
