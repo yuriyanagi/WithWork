@@ -3,3 +3,4 @@
   - @projects.each do |project|
     %li
       = link_to project.title, project_path(project.id)
+%p= link_to "新規作成", new_project_path
