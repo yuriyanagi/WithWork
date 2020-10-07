@@ -1,0 +1,10 @@
+%h1 編集
+/ フォーム
+= form_for @project do |f|
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.submit
+    %br/
