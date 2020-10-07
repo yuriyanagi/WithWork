@@ -4,4 +4,5 @@
     %li
       = link_to project.title, project_path(project.id)
       = link_to "編集", edit_project_path(project.id)
+      = link_to "削除", project_path(project.id), method: :delete, data: {confirm: "are you sure?"}
 %p= link_to "新規作成", new_project_path
