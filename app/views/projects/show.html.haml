@@ -1,1 +1,14 @@
 %h1= @project.title
+
+%ul
+  - @project.tasks.each do |task|
+    %li
+      = task.deadline
+      = task.title
+      = task.remarks
+  %li
+    = form_for [@project, @project.tasks.build] do |f|
+      = f.date_select :deadline, use_month_numbers:true
+      = f.text_field :title
+      = f.text_field :remarks
+      = f.submit
