@@ -1,0 +1,15 @@
+%h1= @project.title
+
+%ul
+  - @project.tasks.each do |task|
+    %li
+      = task.deadline
+      = task.title
+      = task.remarks
+      = link_to "削除", project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"}
+  %li
+    = form_with model:[@project, @project.tasks.build], local:true do |f|
+      = f.date_select :deadline, use_month_numbers:true
+      = f.text_field :title
+      = f.text_field :remarks
+      = f.submit

@@ -1,0 +1,9 @@
+%h1 編集
+= form_with model:@project, local:true do |f|
+  %p
+    = f.label :タイトル
+    %br/
+    = f.text_field :title
+  %p
+    = f.submit
+    %br/

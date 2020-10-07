@@ -1,0 +1,11 @@
+%h1 project新規作成
+
+= form_with model:@project, local:true do |f|
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+    %br/
+  %p
+    = f.submit
+    %br/
