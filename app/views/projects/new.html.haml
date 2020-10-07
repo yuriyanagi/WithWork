@@ -1,6 +1,6 @@
 %h1 project新規作成
 
-= form_for @project do |f|
+= form_with model:@project, local:true do |f|
   %p
     = f.label :title
     %br/
