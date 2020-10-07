@@ -1,0 +1,17 @@
+%h1 編集
+= form_with model: [@project, @task], local:true do |f|
+  %p
+    = f.label :期限
+    %br/
+    = f.date_select :deadline
+  %p
+    = f.label :タスク
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :備考
+    %br/
+    = f.text_field :remarks
+  %p
+    = f.submit
+    %br/

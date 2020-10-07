@@ -6,6 +6,7 @@
       = task.deadline
       = task.title
       = task.remarks
+      = link_to "編集", edit_project_task_path(task.project_id, task.id)
       = link_to "削除", project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"}
   %li
     = form_for [@project, @project.tasks.build] do |f|
