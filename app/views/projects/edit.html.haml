@@ -1,8 +1,7 @@
 %h1 編集
-/ フォーム
-= form_for @project do |f|
+= form_with model:@project, local:true do |f|
   %p
-    = f.label :title
+    = f.label :タイトル
     %br/
     = f.text_field :title
   %p
