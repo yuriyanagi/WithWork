@@ -1,0 +1,9 @@
+%h1 メモ
+%ul
+  - @memos.each do |memo|
+    %li
+      = memo.title
+      = memo.content
+      = link_to "編集", edit_memo_path(memo.id)
+      = link_to "削除", memo_path(memo.id), method: :delete, data: {confirm: "are you sure?"}
+%p= link_to "新規作成", new_memo_path
