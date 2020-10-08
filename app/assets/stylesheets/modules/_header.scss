@@ -13,10 +13,13 @@ body{
     color: whitesmoke;
     display: flex;
     justify-content: space-between;
+    // align-items: center;
     &__Title{
       font-size: 30px;
     }
     &__User{
+      display: flex;
+      align-items: center;
       font-size: 20px;
     }
   }
@@ -25,14 +28,18 @@ body{
     height:4vh;
     background-color: #94aa8d;
     font-size: 25px;
-    text-align: center;
+    // text-align: center;
     display: flex;
     justify-content: center;
     &__countent{
       width: 33.33vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .countent{
         text-decoration: none;
         color:whitesmoke;
+        padding: 20px 0 0 0 ;
       }
     }
     
