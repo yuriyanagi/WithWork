@@ -23,8 +23,5 @@
             = link_to "TODO", projects_path, class: "countent"
           %p.Header__LinkBar__countent
             = link_to "MEMO", memos_path, class: "countent"
-    -if user_signed_in?
-      = yield
-    - else
-      = link_to "ログイン",new_user_session_path ,class:"post"
-      = link_to "新規登録",new_user_registration_path ,class:"post"
+    = yield
+
