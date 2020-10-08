@@ -3,20 +3,20 @@
   height: 90vh;
   color: black;
   background-color: #94aa8d；
-  // opacity: 0.2;
 }
 
 .List{
   height: 5%;
   display: flex;
   justify-content: space-around;
-  background-color: whitesmoke;
-  opacity: 0.45;
+  background-color: rgba(#cde4c2, 0.4);
   color: black;
+  border-bottom: black 5px double;
 }
 
 .Item{
   height: 90%;
+  background-color: rgba(#cde4c2, 0.4);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
