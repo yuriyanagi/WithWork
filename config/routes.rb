@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tasks, only: [:create, :destroy]
   end
-  resources :memos, only: [:index]
+  resources :memos, only: [:index, :new]
 end
