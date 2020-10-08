@@ -10,11 +10,18 @@
   %body
     %header
       .Header
-        .Header__Bar
-          %h1.Header__BarTitle
+        .Header__TitleBar
+          %h1.Header__TitleBar__Title
             With Work
           -if user_signed_in?
-            %p.Header__BarUser
-              name    
+            %p.Header__TitleBar__User
+              = current_user.name
+        .Header__LinkBar
+          %p.Header__LinkBar__countent
+            = link_to "WorkRecord", records_path, class: "countent"
+          %p.Header__LinkBar__countent
+            = link_to "TODO", projects_path, class: "countent"
+          %p.Header__LinkBar__countent
+            = link_to "MEMO", memos_path, class: "countent"
     = yield
 

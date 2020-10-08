@@ -1,0 +1,40 @@
+body{
+  height: 100vh;
+  background-image: url("#{asset_path('background.jpeg')}");
+  display:block;
+  background-size: cover;
+}
+
+.Header{
+  &__TitleBar{
+    height:6vh;
+    padding: 0 50px;
+    background-color: #00211d;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    &__Title{
+      font-size: 30px;
+    }
+    &__User{
+      font-size: 20px;
+    }
+  }
+
+  &__LinkBar{
+    height:4vh;
+    background-color: #94aa8d;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    &__countent{
+      width: 33.33vw;
+      .countent{
+        text-decoration: none;
+        color:whitesmoke;
+      }
+    }
+    
+  }
+}

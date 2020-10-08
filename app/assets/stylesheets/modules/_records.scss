@@ -1,25 +1,9 @@
-.Wrapper{
-  height: 100vh;
-  background-image: url("#{asset_path('background.jpeg')}");
-  background-size: cover;
-  // display: flex;
 
-}
-.Header{
-  height: 5vh;
-  background-color: rgb(54, 122, 94);
-  &__Bar{
-    color: whitesmoke;
-    display: flex;
-    justify-content: space-around;
-  &__BarTitle{
-    font-size: 10px;
-  }
-  }
-}
 .Main {
-  height: 95vh;
+  height: 90vh;
   color: black;
+  background-color: #94aa8d；
+  // opacity: 0.2;
 }
 
 .List{
