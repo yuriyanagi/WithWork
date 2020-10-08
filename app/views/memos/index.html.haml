@@ -4,4 +4,5 @@
     %li
       = memo.title
       = memo.content
+      = link_to "編集", edit_memo_path(memo.id)
 %p= link_to "新規作成", new_memo_path
