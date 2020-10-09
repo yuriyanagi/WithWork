@@ -38,6 +38,6 @@ class MemosController < ApplicationController
   private
 
   def memo_params
-    params[:memo].permit(:title, :content)
+    params[:memo].permit(:title, :content).merge(user_id: current_user.id)
   end
 end
