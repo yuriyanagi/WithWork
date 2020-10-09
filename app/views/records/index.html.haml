@@ -2,30 +2,26 @@
   -if user_signed_in?
     .Main
       .List
-        .List__Date
-          日付
         .List__StartTime
-          開始時間
+          開始日時
         .List__EndTime
-          終了時間
+          終了日時
         .List__ElapsedTime
           経過時間
         .List__MajorClass
-          会社名
-        .List__MiddleClass
           分類
+        .List__MiddleClass
+          内容
         .List__SmallClass
-          詳細
+          備考
 
       .Item
         - @records.each do |record|
           .Item__Box
-            .Item__Date
-              = record.date.strftime("%Y/%m/%d")
             .Item__StartTime
-              = record.start_time.strftime("%H:%M")
+              = record.start_time.strftime("%Y/%m/%d%H:%M")
             .Item__EndTime
-              = record.end_time.strftime("%H:%M")
+              = record.end_time.strftime("%Y/%m/%d%H:%M")
             .Item__ElapsedTime
               - elapsed_seconds = (record.end_time - record.start_time)
               = (Time.parse("1/1") + elapsed_seconds - (elapsed_seconds.to_i / 86400) * 86400).strftime("%H:%M")
@@ -42,10 +38,9 @@
     
       = form_with model:@record, html: {class:"Form"}, local: true do |f|
         .Form__Item
-          = f.date_select :date, class: "Form__Date", date_separator:'/', use_month_numbers:true
-          = f.time_select :start_time, class: "Form__StartTime"
+          = f.datetime_select :start_time, class: "Form__StartTime", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
           = "〜"
-          = f.time_select :end_time, class: "Form__EndTime"
+          = f.datetime_select :end_time, class: "Form__EndTime", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
           = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
           = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
           = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"

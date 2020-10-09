@@ -25,6 +25,6 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:date, :start_time, :end_time, :class1, :class2, :class3)
+    params.require(:record).permit(:start_time, :end_time, :class1, :class2, :class3, :user_id).merge(user_id: current_user.id)
   end
 end
