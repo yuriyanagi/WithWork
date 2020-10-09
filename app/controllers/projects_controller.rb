@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params[:project].permit(:title)
+    params[:project].permit(:title).merge(user_id: current_user.id)
   end
 
 end
