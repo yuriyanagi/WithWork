@@ -8,10 +8,11 @@
 .List{
   height: 5%;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   background-color: rgba(#cde4c2, 0.4);
   color: black;
   border-bottom: black 5px double;
+  border-color: #00211d;
 }
 
 .Item{
