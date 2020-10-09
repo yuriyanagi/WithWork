@@ -3,8 +3,8 @@ class RecordsController < ApplicationController
   def index
     @records = Record.all
     @record = Record.new
-    previous = Record.last
-    @previous_end_time = previous.end_time
+    # previous = Record.last
+    # @previous_end_time = previous.end_time
 
   end
 
