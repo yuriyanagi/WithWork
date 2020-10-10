@@ -8,28 +8,28 @@
           終了日時
         .List__ElapsedTime
           経過時間
-        .List__MajorClass
+        .List__Class1
           分類
-        .List__MiddleClass
+        .List__Class2
           内容
-        .List__SmallClass
+        .List__Class3
           備考
 
       .Item
         - @records.each do |record|
           .Item__Box
             .Item__StartTime
-              = record.start_time.strftime("%Y/%m/%d%H:%M")
+              = record.start_time.strftime("%Y/%m/%d %H:%M")
             .Item__EndTime
-              = record.end_time.strftime("%Y/%m/%d%H:%M")
+              = record.end_time.strftime("%Y/%m/%d %H:%M")
             .Item__ElapsedTime
               - elapsed_seconds = (record.end_time - record.start_time)
               = (Time.parse("1/1") + elapsed_seconds - (elapsed_seconds.to_i / 86400) * 86400).strftime("%H:%M")
-            .Item__MajorClass
+            .Item__Class1
               = record.class1
-            .Item__MiddleClass
+            .Item__Class2
               = record.class2
-            .Item__SmallClass
+            .Item__Class3
               = record.class3
             .Item__Edit
               = link_to edit_record_path(record.id) do
@@ -38,13 +38,13 @@
     
       = form_with model:@record, html: {class:"Form"}, local: true do |f|
         .Form__Item
-          = f.datetime_select :start_time, class: "Form__StartTime", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
-          = "〜"
-          = f.datetime_select :end_time, class: "Form__EndTime", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
-          = f.text_field :class1, class: "Form__MajorClass", placeholder: "分類"
-          = f.text_field :class2, class: "Form__MiddleClass", placeholder: "内容"
-          = f.text_field :class3, class: "Form__SmallClass", placeholder: "備考"
-          = f.submit 'SEND', class: "Form__Submit"
+          = f.datetime_select :start_time, class: "Form__Time", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
+          = " 〜 "
+          = f.datetime_select :end_time, class: "Form__Time", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
+          = f.text_field :class1, class: "Form__Class", placeholder: "分類"
+          = f.text_field :class2, class: "Form__Class", placeholder: "内容"
+          = f.text_field :class3, class: "Form__Class", placeholder: "備考"
+          = f.submit '送信', class: "Form__Submit"
   - else
     = link_to "ログイン",new_user_session_path ,class:"post"
     = link_to "新規登録",new_user_registration_path ,class:"post"
