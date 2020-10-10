@@ -1,0 +1,47 @@
+body{
+  height: 100vh;
+  background-image: url("#{asset_path('background.jpeg')}");
+  display:block;
+  background-size: cover;
+}
+
+.Header{
+  &__TitleBar{
+    height:6vh;
+    padding: 0 50px;
+    background-color: #00211d;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    &__Title{
+      font-size: 30px;
+    }
+    &__User{
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+    }
+  }
+
+  &__LinkBar{
+    height:4vh;
+    background-color: #94aa8d;
+    font-size: 25px;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    &__countent{
+      width: 33.33vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .countent{
+        text-decoration: none;
+        color:whitesmoke;
+        padding: 20px 0 0 0 ;
+      }
+    }
+    
+  }
+}

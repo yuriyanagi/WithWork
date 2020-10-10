@@ -4,6 +4,8 @@
     %li
       = memo.title
       = memo.content
-      = link_to "編集", edit_memo_path(memo.id)
-      = link_to "削除", memo_path(memo.id), method: :delete, data: {confirm: "are you sure?"}
+      = link_to edit_memo_path(memo.id) do
+        = icon('fas', 'pen')
+      = link_to memo_path(memo.id), method: :delete, data: {confirm: "are you sure?"} do
+        = icon('fas', 'trash')
 %p= link_to "新規作成", new_memo_path
