@@ -9,7 +9,8 @@
                 .Memos__Name
                   = memo.title
         .NewTitle
-          = link_to "新規作成", new_memo_path
+          = link_to new_memo_path do
+            =icon('fas', 'plus')
       .RightBar
         .Title
         .Memo
