@@ -1,3 +1,85 @@
-// Place all the styles related to the records controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Main {
+  height: 90vh;
+  color: black;
+  background-color: rgba(#cde4c2, 0.25);
+}
+
+.List{
+  height: 5%;
+  display: flex;
+  align-items: center;
+  color: black;
+  border-bottom: black 5px double;
+  border-color: #00211d;
+  &__StartTime{
+    width: 13%;
+  }
+  &__EndTime{
+    width: 13%;
+  }
+  &__ElapsedTime{
+    width: 9%;
+  }
+  &__Class1{
+    width: 20%;
+  }
+  &__Class2{
+    width: 20%;
+  }
+  &__Class3{
+    width: 20%;
+  }
+}
+
+.Item{
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  overflow:scroll;
+  &__Box{
+    display: flex;
+  }
+  &__StartTime{
+    width: 13%;
+  }
+  &__EndTime{
+    width: 13%;
+  }
+  &__ElapsedTime{
+    width: 9%;
+  }
+  &__Class1{
+    width: 20%;
+  }
+  &__Class2{
+    width: 20%;
+  }
+  &__Class3{
+    width: 20%;
+  }
+}
+i.fas.fa-pen{
+  color: black;
+}
+
+.Form{
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  &__Item{
+    display: flex;
+    align-items: center;
+  }
+  &__Time{
+    height: 50px;
+  }
+  &__Class{
+    height: 30px;
+    width: 250px;
+  }
+  &__Submit{
+    height: 40px;
+    width: 60px;
+  }
+}
