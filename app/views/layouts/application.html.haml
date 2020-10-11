@@ -18,10 +18,10 @@
               = current_user.name
         .Header__LinkBar
           %p.Header__LinkBar__countent
-            = link_to image_tag('WorkRecord-logo.png', :size => '180x50'), records_path, class: "countent"
+            = link_to image_tag('WorkRecord-logo.png', :size => '140x20'), records_path, class: "countent"
           %p.Header__LinkBar__countent
-            = link_to image_tag('TODO-logo.png', :size => '100x50'), projects_path, class: "countent"
+            = link_to image_tag('TODO-logo.png', :size => '80x20'), projects_path, class: "countent"
           %p.Header__LinkBar__countent
-            = link_to image_tag('memo-logo.png', :size => '100x55'), memos_path, class: "countent"
+            = link_to image_tag('memo-logo.png', :size => '95x20'), memos_path, class: "countent"
     = yield
 

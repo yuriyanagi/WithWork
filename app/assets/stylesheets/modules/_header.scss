@@ -13,7 +13,6 @@ body{
     color: whitesmoke;
     display: flex;
     justify-content: space-between;
-    // align-items: center;
     &__Title{
       font-size: 30px;
     }
@@ -28,18 +27,17 @@ body{
     height:4vh;
     background-color: #94aa8d;
     font-size: 25px;
-    // text-align: center;
     display: flex;
     justify-content: center;
     &__countent{
       width: 33.33vw;
-      display: flex;
-      justify-content: center;
       align-items: center;
       .countent{
-        text-decoration: none;
+        width: 33.33vw;
+        display: flex;
+        justify-content: center;
         color:whitesmoke;
-        padding: 20px 0 0 0 ;
+        margin-top: 8px;
       }
     }
     
