@@ -7,6 +7,19 @@
 .LeftBar{
   width: 20vw;
 }
+.ExistingTitle{
+  height: 80vh;
+  overflow: scroll;
+}
+.Memos{
+  height: 10vh;
+  &__Name{
+   
+  }
+}
+.NewTitle{
+  height: 10vh;
+}
 .RightBar{
   width: 80vw;
 }

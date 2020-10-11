@@ -2,12 +2,13 @@
   -if user_signed_in?
     .MM_Main
       .LeftBar
-        - current_user.memos.each do |memo|
-          .Memo
-            = link_to '#' do
-              .Memos__Name
-                = memo.title
-        .NewMemo
+        .ExistingTitle
+          - current_user.memos.each do |memo|
+            .Memos
+              = link_to '#' do
+                .Memos__Name
+                  = memo.title
+        .NewTitle
           = link_to "新規作成", new_memo_path
       .RightBar
         .Title
