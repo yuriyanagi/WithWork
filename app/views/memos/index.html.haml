@@ -1,26 +1,7 @@
 .Wrapper
   -if user_signed_in?
     .MM_Main
-      .LeftBar
-        .ExistingTitle
-          - current_user.memos.each do |memo|
-            .Memos
-              = link_to '#' do
-                .Memos__Name
-                  = memo.title
-        .NewTitle
-          = link_to new_memo_path do
-            =icon('fas', 'plus')
-      .RightBar
-        .Title
-        .Memo
-          - @memos.each do |memo|
-            = memo.title
-            = memo.content
-            = link_to edit_memo_path(memo.id) do
-              = icon('fas', 'pen')
-            = link_to memo_path(memo.id), method: :delete, data: {confirm: "are you sure?"} do
-              = icon('fas', 'trash')
+      = render "sidebar"
   - else
     = link_to "ログイン",new_user_session_path ,class:"post"
     = link_to "新規登録",new_user_registration_path ,class:"post"
