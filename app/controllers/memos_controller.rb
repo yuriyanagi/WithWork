@@ -3,6 +3,10 @@ class MemosController < ApplicationController
     @memos = Memo.all
   end
 
+  def show
+    @memo = Memo.find(params[:id])
+  end
+
   def new
     @memo = Memo.new
   end
