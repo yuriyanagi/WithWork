@@ -1,10 +1,7 @@
-%h1 prjects
-%ul
-  - @projects.each do |project|
-    %li
-      = link_to project.title, project_path(project.id)
-      = link_to  edit_project_path(project.id) do
-        = icon('fas', 'pen')
-      = link_to project_path(project.id), method: :delete, data: {confirm: "are you sure?"} do
-        = icon('fas', 'trash')
-%p= link_to "新規作成", new_project_path
+.Wrapper
+  -if user_signed_in?
+    .TD_Main
+      = render "sidebar"
+  - else
+    = link_to "ログイン",new_user_session_path ,class:"post"
+    = link_to "新規登録",new_user_registration_path ,class:"post"
