@@ -1,16 +1,24 @@
-%h1= @project.title
-
-%ul
-  - @project.tasks.each do |task|
-    %li
-      = task.deadline
-      = task.title
-      = task.remarks
-      = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"} do
-        = icon('fas', 'trash')
-  %li
-    = form_with model:[@project, @project.tasks.build], local:true do |f|
-      = f.date_select :deadline, use_month_numbers:true
-      = f.text_field :title
-      = f.text_field :remarks
-      = f.submit
+.TD_Main
+  = render "sidebar"
+  .RightBar
+    .Title
+      .Title__Main
+        = @project.title
+      .Title__Content
+        = link_to  edit_project_path(@project.id) do
+          = icon('fas', 'pen')
+        = link_to project_path(@project.id), method: :delete, data: {confirm: "are you sure?"} do
+          = icon('fas', 'trash')
+    .Task
+      - @project.tasks.each do |task|
+        = task.deadline
+        = task.title
+        = task.remarks
+        = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"} do
+          = icon('fas', 'trash')
+    .Form
+      = form_with model:[@project, @project.tasks.build], local:true do |f|
+        = f.date_select :deadline, use_month_numbers:true
+        = f.text_field :title, placeholder: "タスク"
+        = f.text_field :remarks, placeholder: "備考"
+        = f.submit '送信'
