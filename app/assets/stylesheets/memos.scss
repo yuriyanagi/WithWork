@@ -11,6 +11,7 @@
 .ExistingTitle{
   height: 80vh;
   overflow: scroll;
+  font-size: 20px;
 }
 .Memos{
   height: 10vh;
@@ -29,4 +30,22 @@
 }
 .RightBar{
   width: 80vw;
+}
+.Title{
+  height: 10vh;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  &__Main{
+    width: 90%;
+    word-wrap: break-word;
+  }
+  &__Content{
+    width: 10%;
+  }
+}
+.Memo{
+  height: 80vh;
+  font-size: 18px;
+  word-wrap: break-word;
 }

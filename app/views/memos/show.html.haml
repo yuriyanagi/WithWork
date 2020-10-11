@@ -3,10 +3,12 @@
   = render "sidebar"
   .RightBar
     .Title
-      = @memo.title
-      = link_to edit_memo_path(@memo.id) do
-        = icon('fas', 'pen')
-      = link_to memo_path(@memo.id), method: :delete, data: {confirm: "are you sure?"} do
-        = icon('fas', 'trash')
+      .Title__Main
+        = @memo.title
+      .Title__Content
+        = link_to edit_memo_path(@memo.id) do
+          = icon('fas', 'pen')
+        = link_to memo_path(@memo.id), method: :delete, data: {confirm: "are you sure?"} do
+          = icon('fas', 'trash')
     .Memo
       = @memo.content
