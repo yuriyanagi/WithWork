@@ -1,0 +1,12 @@
+.LeftBar
+  .Projects
+    - current_user.projects.each do |project|
+      .Projects
+        = link_to project_path(project) do
+          .Projects__Name
+            = project.title
+  .NewTitle
+    = link_to new_project_path do
+      =icon('fas', 'plus')
+
+
