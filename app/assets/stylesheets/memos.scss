@@ -6,6 +6,7 @@
 }
 .LeftBar{
   width: 20vw;
+  background-color: rgba(#cde4c2, 0.4);
 }
 .ExistingTitle{
   height: 80vh;
@@ -13,12 +14,18 @@
 }
 .Memos{
   height: 10vh;
+  display: flex;
+  align-items: center;
   &__Name{
-   
+   color: black;
+   text-decoration: none;
   }
 }
 .NewTitle{
   height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .RightBar{
   width: 80vw;
