@@ -15,8 +15,11 @@
           %h1.Header__TitleBar__Title
             = image_tag 'WithWork-logo.png', :size => '180x55'
           -if user_signed_in?
-            %p.Header__TitleBar__User
-              = current_user.name
+            .Header__TitleBar__User
+              %p.Header__TitleBar__Name
+                = current_user.name
+              %p.Header__TitleBar__Logout
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
         .Header__LinkBar
           %p.Header__LinkBar__countent
             = link_to image_tag('WorkRecord-logo.png', :size => '140x20'), records_path, class: "countent"
