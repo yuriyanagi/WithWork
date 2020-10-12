@@ -1,7 +1,7 @@
 .LeftBar
   .Projects
     - current_user.projects.each do |project|
-      .Projects
+      .Project
         = link_to project_path(project) do
           .Projects__Name
             = project.title
