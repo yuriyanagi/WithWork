@@ -59,6 +59,7 @@
 .Task{
   height: 70vh;
   font-size: 18px;
+  overflow: scroll;
   word-wrap: break-word;
   &__Box{
     display: flex;
