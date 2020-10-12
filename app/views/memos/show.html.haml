@@ -8,7 +8,7 @@
       .Title__Content
         = link_to edit_memo_path(@memo.id) do
           = icon('fas', 'pen')
-        = link_to memo_path(@memo.id), method: :delete, data: {confirm: "are you sure?"} do
+        = link_to memo_path(@memo.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
           = icon('fas', 'trash')
     .Memo
       = @memo.content
