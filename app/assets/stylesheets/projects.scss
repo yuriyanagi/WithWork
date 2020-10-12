@@ -36,6 +36,7 @@
   font-size: 25px;
   display: flex;
   align-items: center;
+  background-color: rgba(#cde4c2, 0.9);
   &__Main{
     width: 90%;
     word-wrap: break-word;
@@ -46,6 +47,7 @@
 }
 .TD_List{
   display: flex;
+  border-bottom: #00211d 5px double;
   &__DeadLine{
     width: 10vw;
   }
