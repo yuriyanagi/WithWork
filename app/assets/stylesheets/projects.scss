@@ -44,8 +44,32 @@
     width: 10%;
   }
 }
-.Memo{
-  height: 80vh;
+.TD_List{
+  display: flex;
+  &__DeadLine{
+    width: 10vw;
+  }
+  &__Title{
+    width: 30vw;
+  }
+  &__Remarks{
+    width: 30vw;
+  }
+}
+.Task{
+  height: 70vh;
   font-size: 18px;
   word-wrap: break-word;
+  &__Box{
+    display: flex;
+  }
+  &__DeadLine{
+    width: 10vw;
+  }
+  &__Title{
+    width: 30vw;
+  }
+  &__Remarks{
+    width: 30vw;
+  }
 }
