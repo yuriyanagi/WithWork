@@ -12,20 +12,19 @@
     %header
       .Header
         .Header__TitleBar
-          %h1.Header__TitleBar__Title
+          .Header__TitleBar__Title
             = image_tag 'WithWork-logo.png', :size => '180x55'
           -if user_signed_in?
             .Header__TitleBar__User
-              %p.Header__TitleBar__Name
+              .Header__TitleBar__Name
                 = current_user.name
-              %p.Header__TitleBar__Logout
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Header__TitleBar__Logout"
         .Header__LinkBar
-          %p.Header__LinkBar__countent
+          .Header__LinkBar__countent
             = link_to image_tag('WorkRecord-logo.png', :size => '140x20'), records_path, class: "countent"
-          %p.Header__LinkBar__countent
+          .Header__LinkBar__countent
             = link_to image_tag('TODO-logo.png', :size => '80x20'), projects_path, class: "countent"
-          %p.Header__LinkBar__countent
+          .Header__LinkBar__countent
             = link_to image_tag('memo-logo.png', :size => '95x20'), memos_path, class: "countent"
     = yield
 
