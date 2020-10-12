@@ -30,7 +30,7 @@
               = icon('fas', 'trash')
     .Form
       = form_with model:[@project, @project.tasks.build], local:true do |f|
-        = f.date_select :deadline, use_month_numbers:true
-        = f.text_field :title, placeholder: "タスク"
-        = f.text_field :remarks, placeholder: "備考"
+        = f.date_select :deadline, class: "Form__Deadline", use_month_numbers:true, date_separator:'/', :start_year => Time.now.year, :end_year => Time.now.year + 1
+        = f.text_field :title, class: "Form__Title", placeholder: "タスク"
+        = f.text_field :remarks, class: "Form__Remarks", placeholder: "備考"
         = f.submit '送信'
