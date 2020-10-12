@@ -3,7 +3,7 @@
     - current_user.projects.each do |project|
       .Project
         = link_to project_path(project) do
-          .Projects__Name
+          .Project__Name
             = project.title
   .NewTitle
     = link_to new_project_path do
