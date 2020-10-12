@@ -7,7 +7,7 @@
       .Title__Content
         = link_to  edit_project_path(@project.id) do
           = icon('fas', 'pen')
-        = link_to project_path(@project.id), method: :delete, data: {confirm: "are you sure?"} do
+        = link_to project_path(@project.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
           = icon('fas', 'trash')
     .TD_List
       .TD_List__DeadLine
@@ -26,7 +26,7 @@
           .Task__Remarks
             = task.remarks
           .Task__Delete
-            = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"} do
+            = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
               = icon('fas', 'trash')
     .Form
       = form_with model:[@project, @project.tasks.build], local:true do |f|
