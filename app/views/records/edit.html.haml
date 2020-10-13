@@ -1,10 +1,26 @@
-= form_with model:@record, html: {class:"Edit__Form"}, local: true do |f|
-  .Form__Item
-    = f.date_field :date, class: "Form__Date"
-    = f.time_field :start_time, class: "Form__StartTime"
-    = "〜"
-    = f.time_field :end_time, class: "Form__EndTime"
-    = f.text_field :class1, class: "Form__MajorClass", placeholder: "会社名"
-    = f.text_field :class2, class: "Form__MiddleClass", placeholder: "分類"
-    = f.text_field :class3, class: "Form__SmallClass", placeholder: "詳細"
-  = f.submit 'SEND', class: "Form__Submit"
+.Edit
+  = form_with model:@record, html: {class:"Edit__Form"}, local: true do |f|
+    .Edit__Content
+      .Edit__Content__Title
+        開始日時
+        %br
+        = f.datetime_select :start_time, class: "Edit__Content__Form", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
+    .Edit__Content
+      .Edit__Content__Title
+        終了日時
+        %br
+        = f.datetime_select :end_time, class: "Edit__Content__Form", use_month_numbers:true, date_separator:'/', :datetime_separator => '', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1
+    .Edit__Content
+      .Edit__Content__Title
+        分類
+        = f.text_field :class1, class: "Edit__Content__Form"
+    .Edit__Content
+      .Edit__Content__Title
+        内容
+        = f.text_field :class2, class: "Edit__Content__Form"
+    .Edit__Content
+      .Edit__Content__Title
+        備考
+        = f.text_field :class3, class: "Edit__Content__Form"
+
+    = f.submit '送信', class: "Edit__Submit"
