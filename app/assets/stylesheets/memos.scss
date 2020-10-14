@@ -1,3 +1,51 @@
-// Place all the styles related to the Memos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.MM_Main {
+  height: 90vh;
+  color: black;
+  background-color: rgba(#cde4c2, 0.25);
+  display: flex;
+}
+.LeftBar{
+  width: 20vw;
+  background-color: rgba(#cde4c2, 0.4);
+}
+.ExistingTitle{
+  height: 80vh;
+  overflow: scroll;
+  font-size: 20px;
+}
+.Memos{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  &__Name{
+   color: black;
+  }
+}
+.NewTitle{
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RightBar{
+  width: 80vw;
+}
+.Title{
+  height: 10vh;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(#cde4c2, 0.9);
+  &__Main{
+    width: 90%;
+    word-wrap: break-word;
+  }
+  &__Content{
+    width: 10%;
+  }
+}
+.Memo{
+  height: 80vh;
+  font-size: 18px;
+  word-wrap: break-word;
+}

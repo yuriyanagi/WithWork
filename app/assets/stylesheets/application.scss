@@ -2,4 +2,21 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/header";
-@import "modules/records";
+@import "records";
+@import "projects";
+@import "memos";
+@import "modules/new";
+@import "modules/edit";
+
+i.fas.fa-pen{
+  color: black;
+}
+
+i.fas.fa-trash{
+  color: black;
+}
+
+i.fas.fa-plus{
+  color: black;
+  font-size: 1.5em;
+}

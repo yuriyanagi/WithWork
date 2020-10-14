@@ -1,9 +1,7 @@
-%h1 編集
-= form_with model:@project, local:true do |f|
-  %p
-    = f.label :タイトル
-    %br/
-    = f.text_field :title
-  %p
-    = f.submit
-    %br/
+.Edit
+  = form_with model:@project, html: {class:"Edit__Form"}, local:true do |f|
+    .Edit__Content
+      .Edit__Content__Title
+        タイトル
+        = f.text_field :title, class: "Edit__Content__Form"
+    = f.submit '変 更', class: "Edit__Submit"

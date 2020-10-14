@@ -1,11 +1,7 @@
-%h1 project新規作成
-
-= form_with model:@project, local:true do |f|
-  %p
-    = f.label :title
-    %br/
-    = f.text_field :title
-    %br/
-  %p
-    = f.submit
-    %br/
+.New
+  = form_with model:@project, html: {class:"Edit__Form"}, local:true do |f|
+    .New__Content
+      .New__Content__Title
+        タイトル
+        = f.text_field :title, class: "New__Content__Form"
+    = f.submit '新規作成', class: "New__Submit"

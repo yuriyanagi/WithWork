@@ -1,16 +1,36 @@
-%h1= @project.title
-
-%ul
-  - @project.tasks.each do |task|
-    %li
-      = task.deadline
-      = task.title
-      = task.remarks
-      = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "are you sure?"} do
-        = icon('fas', 'trash')
-  %li
-    = form_with model:[@project, @project.tasks.build], local:true do |f|
-      = f.date_select :deadline, use_month_numbers:true
-      = f.text_field :title
-      = f.text_field :remarks
-      = f.submit
+.TD_Main
+  = render "sidebar"
+  .RightBar
+    .Title
+      .Title__Main
+        = @project.title
+      .Title__Content
+        = link_to  edit_project_path(@project.id) do
+          = icon('fas', 'pen')
+        = link_to project_path(@project.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
+          = icon('fas', 'trash')
+    .TD_List
+      .TD_List__DeadLine
+        期限
+      .TD_List__Title
+        タスク
+      .TD_List__Remarks
+        備考
+    .Task
+      - @project.tasks.each do |task|
+        .Task__Box
+          .Task__DeadLine
+            = task.deadline.strftime("%Y/%m/%d")
+          .Task__Title
+            = task.title
+          .Task__Remarks
+            = task.remarks
+          .Task__Delete
+            = link_to project_task_path(task.project_id, task.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
+              = icon('fas', 'trash')
+    .Form
+      = form_with model:[@project, @project.tasks.build], local:true do |f|
+        = f.date_select :deadline, class: "Form__Deadline", use_month_numbers:true, date_separator:'/', :start_year => Time.now.year, :end_year => Time.now.year + 1
+        = f.text_field :title, class: "Form__Title", placeholder: "タスク"
+        = f.text_field :remarks, class: "Form__Remarks", placeholder: "備考"
+        = f.submit '送信'

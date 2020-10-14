@@ -1,3 +1,88 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.TD_Main {
+  height: 90vh;
+  color: black;
+  background-color: rgba(#cde4c2, 0.25);
+  display: flex;
+}
+.LeftBar{
+  width: 20vw;
+  background-color: rgba(#cde4c2, 0.4);
+}
+.Projects{
+  height: 80vh;
+  overflow: scroll;
+  font-size: 20px;
+}
+.Project{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  &__Name{
+   color: black;
+  }
+}
+.NewTitle{
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RightBar{
+  width: 80vw;
+}
+.Title{
+  height: 10vh;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(#cde4c2, 0.9);
+  &__Main{
+    width: 90%;
+    word-wrap: break-word;
+  }
+  &__Content{
+    width: 10%;
+  }
+}
+.TD_List{
+  display: flex;
+  border-bottom: #00211d 5px double;
+  &__DeadLine{
+    width: 10vw;
+  }
+  &__Title{
+    width: 30vw;
+  }
+  &__Remarks{
+    width: 30vw;
+  }
+}
+.Task{
+  height: 70vh;
+  font-size: 18px;
+  overflow: scroll;
+  word-wrap: break-word;
+  &__Box{
+    display: flex;
+  }
+  &__DeadLine{
+    width: 10vw;
+  }
+  &__Title{
+    width: 30vw;
+  }
+  &__Remarks{
+    width: 30vw;
+  }
+}
+.Form{
+  &__DeadLine{
+    width: 10vw;
+  }
+  &__Title{
+    width: 30vw;
+  }
+  &__Remarks{
+    width: 30vw;
+  }
+}

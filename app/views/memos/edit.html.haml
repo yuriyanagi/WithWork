@@ -1,13 +1,11 @@
-%h1 編集
-= form_with model:@memo, local:true do |f|
-  %p
-    = f.label :タイトル
-    %br/
-    = f.text_field :title
-  %p
-    = f.label :内容
-    %br/
-    = f.text_area :content
-  %p
-    = f.submit
-    %br/
+.Edit
+  = form_with model:@memo, html: {class:"Edit__Form"}, local:true do |f|
+    .Edit__Content
+      .Edit__Content__Title
+        タイトル
+        = f.text_field :title, class: "Edit__Content__Form"
+    .Edit__Content
+      .Edit__Content__Title
+        内容
+        = f.text_area :content, class: "Edit__Content__TextArea"
+    = f.submit '変 更', class: "Edit__Submit"

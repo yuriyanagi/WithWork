@@ -10,6 +10,7 @@ class RecordsController < ApplicationController
 
   def create
     Record.create(record_params)
+    redirect_to records_path
   end
 
   def edit

@@ -1,0 +1,14 @@
+
+.MM_Main
+  = render "sidebar"
+  .RightBar
+    .Title
+      .Title__Main
+        = @memo.title
+      .Title__Content
+        = link_to edit_memo_path(@memo.id) do
+          = icon('fas', 'pen')
+        = link_to memo_path(@memo.id), method: :delete, data: {confirm: "本当に削除しますか?"} do
+          = icon('fas', 'trash')
+    .Memo
+      = @memo.content

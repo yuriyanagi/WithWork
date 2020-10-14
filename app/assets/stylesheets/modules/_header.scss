@@ -13,14 +13,20 @@ body{
     color: whitesmoke;
     display: flex;
     justify-content: space-between;
-    // align-items: center;
-    &__Title{
-      font-size: 30px;
-    }
     &__User{
+      width: 300px;
       display: flex;
+      justify-content: space-around;
       align-items: center;
       font-size: 20px;
+    }
+    &__Name{
+      font-size: 25px;
+    }
+    &__Logout{
+      font-size: 17px;
+      color: whitesmoke;
+      border: whitesmoke;
     }
   }
 
@@ -28,18 +34,17 @@ body{
     height:4vh;
     background-color: #94aa8d;
     font-size: 25px;
-    // text-align: center;
     display: flex;
     justify-content: center;
     &__countent{
       width: 33.33vw;
-      display: flex;
-      justify-content: center;
       align-items: center;
       .countent{
-        text-decoration: none;
+        width: 33.33vw;
+        display: flex;
+        justify-content: center;
         color:whitesmoke;
-        padding: 20px 0 0 0 ;
+        margin-top: 8px;
       }
     }
     
