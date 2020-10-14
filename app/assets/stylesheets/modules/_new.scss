@@ -1,0 +1,36 @@
+.New{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  &__Form{
+    width: 500px;
+    margin: 50px 0;
+    background-color: rgba(#cde4c2, 0.4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__Content{
+    width: 200px;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    &__Title{
+      font-size: 15px;
+    }
+    &__Form{
+      height: 38px;
+      width: 350px;
+    }
+    &__TextArea{
+      height: 400px;
+      width: 350px;
+    }
+  }
+  &__Submit{
+    height: 30px;
+    width: 70px;
+  }
+}
