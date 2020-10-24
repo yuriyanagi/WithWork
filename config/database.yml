@@ -52,6 +52,3 @@ production:
   database: WithWork_production
   username: WithWork
   password: <%= ENV['WITHWORK_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
